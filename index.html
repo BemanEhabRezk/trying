@@ -1,0 +1,21 @@
+<label for="num-digits">Number of digits:</label>
+<input type="number" id="num-digits" name="num-digits">
+<button id="generate-button">Generate</button>
+
+<script>
+const button = document.getElementById('generate-button');
+button.addEventListener('click', () => {
+  // Get the number of digits from the input field
+  const numDigits = document.getElementById('num-digits').value;
+
+  // Calculate the lower and upper bounds for the random number
+  const lowerBound = 10 ** (numDigits - 1);
+  const upperBound = 10 ** numDigits - 1;
+
+  // Generate a random number within the desired range
+  const randomNum = Math.round(Math.random() * (upperBound - lowerBound) + lowerBound);
+
+  // Display the result
+  console.log(randomNum);
+});
+</script>
